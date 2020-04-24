@@ -1,0 +1,262 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  height: 100%;
+}
+
+/*Navigation css*/
+.navigation-container {
+  height: 4rem;
+  position: sticky;
+  background-color: #212121;
+  box-shadow: 3px 3px 7px rgba(0,0,0,.5);
+}
+
+@media (max-width: 480px) {
+  .navigation-container {
+    padding: 1rem;
+  }
+}
+
+.navigation-attributes {
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.show-teachers, .sign-in-out {
+  cursor: pointer;
+}
+
+.show-teachers > button, .sign-in-out > button {
+  border: 0 none;
+  border-radius: 0;
+  padding: 0;
+  color: white;
+  background-color: transparent;
+  font-size: 1.5em;
+}
+
+.show-teachers > button:hover, .sign-in-out > button:hover {
+  color: #bbb;
+  padding: 0;
+  background-color: transparent;
+}
+
+.logo-container > h1 {
+  color: #5c49ab;
+  border-bottom: 1px solid  ;
+}
+
+.profile-picture {
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-picture > img {
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.profile-picture > img:hover {
+  padding: 0.25rem;
+  border: 1px solid #5c49ab;
+}
+
+@media (max-width: 768px) {
+  .profile-picture {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .show-teachers, .sign-in-out, .profile-picture {
+    display: flex;
+    justify-content: center;
+  }
+}
+/* css end */
+
+.landing-page-container {
+  height: 100%;
+}
+
+.Login-register-container, .Login-register-container-row {
+  height: 100%;
+}
+
+/* Login Page */
+.login-container, .register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*text-align: center;*/
+  height: 100%;
+  background-color: #ecf0f5;
+}
+
+.register-container {
+  background-color: #b4b7bb;
+}
+
+.register-container > .header {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.login-container > .header {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.pushdown-container {
+  display: none;
+}
+
+/* Login/Register page CSS*/
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: white;
+  color: black;
+  min-width: 50px;
+  text-align: center;
+}
+
+label {
+  margin: 0;
+}
+
+.form-control {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: 0px solid;
+  border-left: 1px solid;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+Button.Login-Button, Button.register-Button {
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+.login-trouble {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 990px) {
+  .register-container {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .pushdown-container {
+    display: block;
+  }
+
+  .pushdown-container > a {
+    text-align: center;
+  }
+}
+
+/* Upload Image CSS */
+
+.uploadImage-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.uploadImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  border: 1px solid;
+}
+
+/* Display Image CSS */
+.images {
+  padding: 2rem 0;
+}
+.image-container {
+  display: flex;
+  /*justify-content: center;*/
+  align-items: center;
+  flex-direction: column;
+}
+
+.image-container > img {
+  display: flex;
+  padding: 2rem 0;
+  height: 20rem;
+}
+
+.options {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start ;
+}
+
+.options-row {
+  width: 100%;
+}
+
+.options > button {
+  background: transparent;
+  color: #000000;
+  padding: 0.5rem 1rem;
+}
+
+.options > button:hover {
+  color: yellowgreen;
+  border: 1px solid yellowgreen;
+  background: transparent;
+}
