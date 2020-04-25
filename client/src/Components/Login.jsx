@@ -20,7 +20,7 @@ class Login extends React.Component {
                 if (res.statusText === "OK") {
                     await this.setState({redirect: true, name: res.data});
                     this.props.provideUserDetails(this.state.name);
-                    alert("User Logged in Successfully!");
+                    alert("User Logged in Successfully! Refresh The page once");
                 } else {
                     alert(res.data);
                 }

@@ -42,7 +42,7 @@ app.post('/saveImageData', require('./Routes/SaveImageData'));
 app.get('/getImages/:userName', require('./Routes/GetImages'));
 
 // blocking users
-app.post('/blockUsers', require('./Routes/BlockUsers'));
+app.post('/blockUsers', require('./Routes/BlockUsers.js'));
 
 // a way to simply ask our server if we have a valid token saved to our browser cookies
 app.get('/checkToken', withAuth, function(req, res) {
@@ -101,11 +101,14 @@ io.on('connection', (socket) => {
                 if (err) throw err;
                 const index = myClientList.findIndex(client => client.name === row[0].name);
                 // console.log(index);
-                socket.join(myClientList[index].id);
-                // console.log((data));
-                io.sockets.to(myClientList[index].id).emit('gotASuperLike', {
-                    id: myClientList[index].id,
-                    msg: `${data.likedBy} liked your picture`});
+                if (index !== -1) {
+                    socket.join(myClientList[index].id);
+                    // console.log((data));
+                    io.sockets.to(myClientList[index].id).emit('gotASuperLike', {
+                        id: myClientList[index].id,
+                        msg: `${data.likedBy} liked your picture`});
+                }
+
             })
     });
 

@@ -3,16 +3,19 @@ import axios from 'axios';
 import Button from "reactstrap/lib/Button";
 
 let socket = require("socket.io-client")("http://localhost:5000");
-console.log(sessionStorage.token);
+
 export default class UserDisplay extends React.Component {
     state = {
         imageData: []
     };
 
     componentDidMount() {
-        // window.location.reload();
-        console.log(this.props.match.params.name)
-        let n = (this.props.match.params.name)
+        // alert('user logged in')
+        console.log(this.props.match.params.name);
+        let n = (this.props.match.params.name);
+        socket.onopen = () => {
+            socket.send('Hello, Client is connected!!')
+        };
         socket.on('connect', function() {
             const obj = {
                 name: n,
@@ -90,7 +93,7 @@ export default class UserDisplay extends React.Component {
     };
 
     render() {
-
+        // window.location.reload()
         const {imageData} = this.state;
         return (
             <div className="row images">
