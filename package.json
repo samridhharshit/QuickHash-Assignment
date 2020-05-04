@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
-    "client": "cd client && yarn && yarn run build",
-    "dev": "concurrently \"yarn run start\" \"yarn run client\""
+    "client": "cd client && yarn && yarn build",
+    "dev": "concurrently \"yarn start\" \"yarn client\""
   },
   "keywords": [
     "quillhash"
